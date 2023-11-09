@@ -1,0 +1,10 @@
+@import url('https://fonts.cdnfonts.com/css/calculator');
+                
+
+.btn{
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    font-family: 'Calculator', sans-serif;
+    font-size: 1.2em;                                         
+}

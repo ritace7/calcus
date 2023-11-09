@@ -1,22 +1,30 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/calculatorBody.css';
-import LeftHand from '../images/handLeft.png'
 import NumberPad from './NumberPad';
+import { useSelector } from 'react-redux';
+// import legs from '../images/legs.png';
 
 function CalculatorBody(){
-
-
-
+    const { value, expression } = useSelector((state) => state.calculator);
     return(
-        <div className="calculator-body">
-            <div className="calculator-head">
-                <div className="display">
-                    
+        <div className="calculator">
+            <div className="calculator-body">
+                <div className="calculator-head">
+                    <div className="display">
+                        <p className="expression">
+                            {expression}
+                        </p>
+                        <p className="value">
+                            {value}
+                        </p>
+                    </div>
                 </div>
+                <NumberPad />
             </div>
-            <NumberPad />
-            {/* <img src={LeftHand} alt="Left Hand" className="left-hand"/> */}
-        </div>
+            {/* <div className="legs">
+                <img src={legs} alt="calculator legs" rel="noreferrer"/>
+            </div> */}
+        </div>     
     )
 }
 
