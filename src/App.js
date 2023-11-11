@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './app.css';
+import './styles/app.css';
 import CalculatorBody from './components/CalculatorBody';
 import Footer from './components/Footer';
 import HeaderComponent from './components/HeaderComponent';

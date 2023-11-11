@@ -1,5 +1,5 @@
 import { useSelector, useDispatch} from "react-redux";
-import {appendToExpression, clearValue } from '../redux/calculator';
+import {appendToExpression, clearValue, updateValue } from '../redux/calculator';
 // import * as math from "https://esm.sh/mathjs";
 
 const OperatorButton = ({operator}) => {
@@ -15,10 +15,12 @@ const OperatorButton = ({operator}) => {
     }
 
     const getTotal = () =>{
-        // dispatch(appendToExpression(displayValue));
+        dispatch(appendToExpression(displayValue));
+        dispatch(clearValue());
+        dispatch(updateValue());
+        // dispatch(updateValue('result'));
         // console.log(displayValue);
         // console.log(expression);
-        // dispatch(updateValue('result'));
         // dispatch(updateValue(math.evaluate(displayValue)));
     }
 

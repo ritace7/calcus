@@ -2,9 +2,9 @@
                 
 
 .btn{
-    width: 3em;
-    height: 3em;
+    width: 2.8em;
+    height: 2.8em;
     border-radius: 50%;
     font-family: 'Calculator', sans-serif;
-    font-size: 1.2em;                                         
+    font-size: 1.2em;  
 }
