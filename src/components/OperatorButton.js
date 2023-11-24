@@ -1,5 +1,5 @@
 import { useSelector, useDispatch} from "react-redux";
-import {appendToExpression, clearValue, updateValue } from '../redux/calculator';
+import {appendToExpression, clearValue, updateExpression, updateValue } from '../redux/calculator';
 import * as math from "https://esm.sh/mathjs";
 
 const OperatorButton = ({operator}) => {
@@ -17,15 +17,15 @@ const OperatorButton = ({operator}) => {
     const getTotal = () =>{
         dispatch(appendToExpression(displayValue));
         const exp = expression + displayValue;
-        console.log(exp);
         dispatch(updateValue(math.evaluate(exp)));
-        // dispatch(updateValue('result'));
+        dispatch(updateExpression(math.evaluate(exp)));
     }
 
     const handleClick = (event) =>{
         const buttonClicked = event.target.textContent; 
         const isOperandPresent = reg.test(expression);
         switch(buttonClicked){
+            
             default:
                 if(isOperandPresent){
                     getTotal();
