@@ -1,0 +1,17 @@
+.header{
+    position: fixed;
+    transform: rotate(-40deg);
+    transform-origin: top left;
+    margin-top: 6em;
+    margin-left: -1em;
+}
+
+.page-header{
+    font-size: 96px;
+    color: $color-primary;
+    margin-bottom: -25px;
+}
+
+.sub-header{
+    font-size: 48px;
+}

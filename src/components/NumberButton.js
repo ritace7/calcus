@@ -6,21 +6,26 @@ const NumberButton = ({num}) => {
     const displayValue = useSelector(state => state.calculator.value);
     
     const handleClick = (event) =>{
-        const buttonClicked = event.target.textContent; 
+        const buttonClicked = event.target.textContent;
+        let isLimitExceeded = false;
+        if(displayValue.length===9){
+            isLimitExceeded = true;
+        } 
+
         switch(buttonClicked){
             case 'C':
                 dispatch(clearValue());
                 dispatch(clearExpression());
                 break;
             case '.':
-                if(!displayValue.includes('.')){
+                if(!displayValue.includes('.') && !isLimitExceeded){
                     dispatch(appendToValue(buttonClicked))
                 }
                 break;
             default:
                 if(displayValue === '0'){
                     dispatch(updateValue(buttonClicked));
-                }else{
+                }else if(!isLimitExceeded){
                     dispatch(appendToValue(buttonClicked));
                 }
         }
