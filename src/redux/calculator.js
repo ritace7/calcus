@@ -6,6 +6,7 @@ export const calculatorSlice = createSlice({
     expression: '',
     value: '0'
   },
+  
   reducers: {
     clearValue: (state) =>{
         state.value = '0'

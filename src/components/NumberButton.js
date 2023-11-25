@@ -13,7 +13,7 @@ const NumberButton = ({num}) => {
         } 
 
         switch(buttonClicked){
-            case 'C':
+            case 'AC':
                 dispatch(clearValue());
                 dispatch(clearExpression());
                 break;
@@ -21,6 +21,16 @@ const NumberButton = ({num}) => {
                 if(!displayValue.includes('.') && !isLimitExceeded){
                     dispatch(appendToValue(buttonClicked))
                 }
+                break;
+            case 'DEL':
+                if(displayValue !== '0'){
+                    let deletedVal = displayValue.slice(0,-1);
+                    if(!deletedVal){
+                        dispatch(updateValue('0'));
+                    }else{
+                        dispatch(updateValue(deletedVal));
+                    }
+                }    
                 break;
             default:
                 if(displayValue === '0'){
@@ -32,7 +42,7 @@ const NumberButton = ({num}) => {
     }
 
     return ( 
-    <button className='btn btn-dark ' onClick={handleClick}>
+    <button className='btn btn-dark ' onClick={handleClick} id={num}>
         {num}
     </button> );
 }

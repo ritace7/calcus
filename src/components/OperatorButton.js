@@ -1,43 +1,46 @@
 import { useSelector, useDispatch} from "react-redux";
-import {appendToExpression, clearValue, updateExpression, updateValue } from '../redux/calculator';
-// import * as math from "https://esm.sh/mathjs";
+import {appendToExpression, clearValue, updateExpression} from '../redux/calculator';
+import { evaluate } from "mathjs";
 
-const OperatorButton = ({operator}) => {
+const OperatorButton = ({operator, id}) => {
     const dispatch = useDispatch();
     const displayValue = useSelector(state => state.calculator.value);
     const expression = useSelector(state => state.calculator.expression);
     const reg = /[/*+-]/; 
 
-    const operate = (operator) => {
-        dispatch(appendToExpression(displayValue));
-        dispatch(appendToExpression(operator));
+    const operate = () =>{
+        const result =evaluate(expression+displayValue);
+        dispatch(updateExpression(result));
         dispatch(clearValue());
     }
 
-    const getTotal = () =>{
-        dispatch(appendToExpression(displayValue));
-        const exp = expression + displayValue;
-        // dispatch(updateValue(math.evaluate(exp)));
-        // dispatch(updateExpression(math.evaluate(exp)));
-    }
-
     const handleClick = (event) =>{
-        const buttonClicked = event.target.textContent; 
+        const buttonClicked = event.target.textContent;
         const isOperandPresent = reg.test(expression);
-        switch(buttonClicked){
-            
+        
+        switch(buttonClicked){      
+            case '=':
+                if(displayValue!=='0'){
+                    operate();
+                }
+                break;      
             default:
-                if(isOperandPresent){
-                    getTotal();
+                if(!isOperandPresent){
+                    dispatch(appendToExpression(displayValue));
+                    dispatch(appendToExpression(buttonClicked));
+                    dispatch(clearValue());
                 }else{
-                    operate(buttonClicked);
+                    operate();
+                    dispatch(appendToExpression(buttonClicked));
                 }
         }
     }
 
     return ( 
-        <button className='btn btn-light' onClick={handleClick}>
-            {operator}
+        <button className='btn btn-light' onClick={handleClick} id={id}>
+            <p>
+                {operator}
+            </p>
         </button> 
     );
 }

@@ -110,8 +110,26 @@
   width: 2.8em;
   height: 2.8em;
   border-radius: 50%;
+  margin: auto;
   font-family: "Calculator", sans-serif;
   font-size: 1.2em;
+}
+
+#DEL {
+  width: 7.6em;
+  border-radius: 2em;
+}
+
+#EQUALS {
+  width: 5.7em;
+  border-radius: 2em;
+  transform: rotate(90deg);
+  margin-top: -2em;
+  margin-left: -1.5em;
+}
+#EQUALS p {
+  transform: rotate(90deg);
+  margin: auto;
 }
 
 .header {
@@ -151,8 +169,11 @@ footer a {
   font-size: 0.6em;
 }
 
-@media screen and (max-width: 453px) {
+@media screen and (max-width: 540px) {
   .header {
+    visibility: hidden;
+  }
+  footer {
     visibility: hidden;
   }
   .calculator {
@@ -161,6 +182,25 @@ footer a {
   }
   .calculator-body {
     width: 100%;
+  }
+  .number-pad {
+    width: 90%;
+    height: 45vh;
+    margin: auto;
+    padding: 0.5em 0;
+  }
+  .number-pad button {
+    margin-bottom: 1em;
+  }
+  #EQUALS {
+    width: 6.8em;
+    margin-top: -2em;
+    margin-left: -2em;
+  }
+}
+@media screen and (max-width: 768px) {
+  .calculator {
+    border: 1px solid red;
   }
 }
 .App {

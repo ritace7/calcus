@@ -1,5 +1,9 @@
-@media screen and (max-width: 453px) {
+@include media-sm{
     .header{
+        visibility: hidden;
+    }
+    
+    footer{
         visibility: hidden;
     }
 
@@ -12,4 +16,27 @@
         width: 100%;
     }
 
+    .number-pad{
+        width: 90%;
+        height: 45vh;
+        margin: auto;
+        padding: 0.5em 0;
+
+        button{
+            margin-bottom: 1em;
+        }
+    }
+
+    #EQUALS{
+        width: 6.8em;
+        margin-top: -2em;
+        margin-left: -2em;
+    }
+    
+}
+
+@include media-md{
+    .calculator{
+        border: 1px solid red;
+    }
 }

@@ -8,3 +8,15 @@ $color-secondary: #65DFFA;
     margin: 0;
     padding: 0;
 }
+
+@mixin media-sm{
+    @media screen and (max-width: 540px){
+        @content;
+    }
+}
+
+@mixin media-md{
+    @media screen and (max-width: 768px){
+        @content;
+    }
+}
