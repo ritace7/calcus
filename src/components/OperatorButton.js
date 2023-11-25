@@ -1,6 +1,6 @@
 import { useSelector, useDispatch} from "react-redux";
 import {appendToExpression, clearValue, updateExpression, updateValue } from '../redux/calculator';
-import * as math from "https://esm.sh/mathjs";
+// import * as math from "https://esm.sh/mathjs";
 
 const OperatorButton = ({operator}) => {
     const dispatch = useDispatch();
