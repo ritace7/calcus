@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/calcus/static/css/main.b8cae165.css",
-    "main.js": "/calcus/static/js/main.9e2afde1.js",
+    "main.css": "/calcus/static/css/main.51bd936f.css",
+    "main.js": "/calcus/static/js/main.f8304afb.js",
     "static/media/face.png": "/calcus/static/media/face.a5e847bac697c2cd21f7.png",
     "static/media/legs.png": "/calcus/static/media/legs.93f5c2a4d78d58556218.png",
     "static/media/handRight.png": "/calcus/static/media/handRight.4802c84996ad2e50d3b3.png",
     "static/media/handLeft.png": "/calcus/static/media/handLeft.ce31cc52ff3350dbfbaa.png",
     "index.html": "/calcus/index.html",
-    "main.b8cae165.css.map": "/calcus/static/css/main.b8cae165.css.map",
-    "main.9e2afde1.js.map": "/calcus/static/js/main.9e2afde1.js.map"
+    "main.51bd936f.css.map": "/calcus/static/css/main.51bd936f.css.map",
+    "main.f8304afb.js.map": "/calcus/static/js/main.f8304afb.js.map"
   },
   "entrypoints": [
-    "static/css/main.b8cae165.css",
-    "static/js/main.9e2afde1.js"
+    "static/css/main.51bd936f.css",
+    "static/js/main.f8304afb.js"
   ]
 }
