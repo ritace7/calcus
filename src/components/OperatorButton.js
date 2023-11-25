@@ -17,8 +17,8 @@ const OperatorButton = ({operator}) => {
     const getTotal = () =>{
         dispatch(appendToExpression(displayValue));
         const exp = expression + displayValue;
-        dispatch(updateValue(math.evaluate(exp)));
-        dispatch(updateExpression(math.evaluate(exp)));
+        // dispatch(updateValue(math.evaluate(exp)));
+        // dispatch(updateExpression(math.evaluate(exp)));
     }
 
     const handleClick = (event) =>{
